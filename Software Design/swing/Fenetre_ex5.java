@@ -6,10 +6,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Scanner;
 
-public class Fenetre_ex4 extends JFrame {
+public class Fenetre_ex5 extends JFrame {
     private final JButton[] buttons;
 
-    public Fenetre_ex4(int nButtons) {
+    public Fenetre_ex5(int nButtons) {
         // borne n entre 1 et 9 (exigence de l'énoncé)
         nButtons = Math.max(1, Math.min(nButtons, 9));
 
@@ -25,14 +25,17 @@ public class Fenetre_ex4 extends JFrame {
         buttons = new JButton[nButtons];
         for (int i = 0; i < nButtons; i++) {
             JButton b = new JButton("Bouton " + (i + 1));
+            b.setBorder(new LineBorder(Color.YELLOW, 2));
+            b.setBackground(new Color(102, 102, 0));
+            
             b.setFocusable(true);
 
             // Mise en évidence visuelle quand le bouton a le focus (via FocusAdapter, vu dans le cours)
             Color normalBg = b.getBackground();
             b.addFocusListener(new FocusAdapter() {
                 @Override public void focusGained(FocusEvent e) {
-                    b.setBorder(new LineBorder(Color.BLUE, 2));
-                    b.setBackground(new Color(200, 220, 255));
+                    b.setBorder(new LineBorder(Color.RED, 2));
+                    b.setBackground(new Color(255, 0, 0));
                 }
                 @Override public void focusLost(FocusEvent e) {
                     b.setBorder(UIManager.getBorder("Button.border"));
@@ -84,6 +87,6 @@ public class Fenetre_ex4 extends JFrame {
         scanner.close();
 
         final int n = nButtons;
-        SwingUtilities.invokeLater(() -> new Fenetre_ex4(n));
+        SwingUtilities.invokeLater(() -> new Fenetre_ex5(n));
     }
 }
