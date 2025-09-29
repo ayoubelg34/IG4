@@ -1,0 +1,26 @@
+package lab2;
+
+public class Employe50 extends Employe {
+    private double nb_hours;
+    private double tarif_hour;
+
+    public Employe50(String name, double nb_hours, double tarif_hour) {
+        super(name);
+        this.nb_hours = nb_hours;
+        this.tarif_hour = tarif_hour;
+    }
+    
+    public double getSalary() {
+        if (nb_hours <= 35) {
+            return nb_hours * tarif_hour;
+        }
+        else {
+            return (35 * tarif_hour) + ((nb_hours - 35) * tarif_hour * 1.5);
+        }
+    }
+
+    public void SetSalaryInfos(double nb_hours, double tarif_hour){ 
+        this.nb_hours = nb_hours;
+        this.tarif_hour = tarif_hour;
+    }
+}
