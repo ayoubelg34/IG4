@@ -4,8 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
 
-public class Fenetre extends JFrame {
-    public Fenetre(int nButtons) {
+// Exemple minimaliste d'une fenêtre avec un nombre variable de boutons
+public class Fenetre extends JFrame { // pas besoin d'attributs ici
+    public Fenetre(int nButtons) { // nButtons : nombre de boutons à créer
         this.setTitle("Exemple Swing");
         this.setSize(400, 300);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
